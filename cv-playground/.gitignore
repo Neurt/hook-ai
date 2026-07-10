@@ -1,0 +1,8 @@
+# Real CVs are personal data — never commit them. Keep only the samples + .gitkeep.
+cvs/*
+!cvs/.gitkeep
+!cvs/sample_cv.txt
+!cvs/messy_cv.txt
+out/
+__pycache__/
+*.pyc

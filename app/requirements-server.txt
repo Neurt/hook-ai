@@ -1,0 +1,10 @@
+# Chat backend (in addition to requirements.txt)
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.6.0
+python-multipart>=0.0.9
+# CV file ingestion (PDF / DOCX uploads)
+pypdf>=4.0.0
+python-docx>=1.1.0
+# CV export (DOCX above covers .docx; PDF needs reportlab — pure-Python, no system libs)
+reportlab>=4.2.0

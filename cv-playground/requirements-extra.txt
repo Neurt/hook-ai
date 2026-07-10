@@ -1,0 +1,6 @@
+# Only needed to read PDF / DOCX CVs, or to export to_ats.py --docx/--pdf.
+# Plain .txt / .md reading needs nothing extra.
+# (openai + python-dotenv come from ../app/requirements.txt)
+pypdf>=4.0.0
+python-docx>=1.1.0
+reportlab>=4.2.0

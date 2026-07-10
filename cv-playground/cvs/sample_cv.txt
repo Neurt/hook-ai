@@ -1,0 +1,30 @@
+Amara Okafor
+Data Analyst — Kuala Lumpur, Malaysia
+amara.okafor@example.com | +60 12-345 6789 | linkedin.com/in/amaraokafor
+
+PROFILE
+Data analyst with 4 years' experience turning messy operational data into dashboards
+and decisions for retail and logistics teams. Comfortable owning a problem end to end,
+from SQL extraction to stakeholder presentation.
+
+EXPERIENCE
+Data Analyst — Tessera Retail Group (2022–present)
+- Built the company's first self-serve sales dashboard suite in Power BI; adopted by
+  120+ store managers and cut weekly reporting time from 6 hours to 20 minutes.
+- Wrote and optimised SQL across a 40-table warehouse; automated 15 recurring reports.
+- Ran A/B analyses on promotions, identifying a pricing change worth +RM1.2M/year.
+
+Junior Analyst — Lumina Logistics (2020–2022)
+- Cleaned and modelled delivery data in Excel and Python (pandas); flagged route
+  inefficiencies that reduced late deliveries by 18%.
+- Produced monthly KPI reports for operations leadership.
+
+SKILLS
+SQL, Power BI, Excel (advanced), Python (pandas), data cleaning, A/B testing,
+stakeholder communication
+
+EDUCATION
+BSc Statistics — Universiti Malaya (2020)
+
+CERTIFICATIONS
+Microsoft Power BI Data Analyst Associate (PL-300), 2023

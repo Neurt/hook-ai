@@ -1,0 +1,60 @@
+# Hook AI — local stack.
+#   docker compose up --build         -> chat UI at http://localhost:8080
+#   docker compose --profile croo up  -> also runs the CROO provider (needs croo-connect/.env)
+#
+# The API reads its keys from app/.env (OPENROUTER_API_KEY required; ADZUNA_* / HUNTER_API_KEY optional).
+
+services:
+  api:
+    build:
+      context: ./app
+    env_file:
+      - ./app/.env
+    environment:
+      - HOOKAI_DATA_DIR=/data
+      - SEARXNG_URL=http://searxng:8080   # keyless self-hosted web-search job source
+    volumes:
+      - hookai-data:/data   # sessions.db persists across restarts/rebuilds
+    depends_on:
+      - searxng
+    restart: unless-stopped
+    expose:
+      - "8000"
+
+  searxng:
+    image: searxng/searxng:latest
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    expose:
+      - "8080"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # CROO Agent Protocol (CAP) provider — connects this runtime to the CROO
+  # Agent Store (agent.croo.network). Opt-in (profile "croo"); needs
+  # croo-connect/.env with CROO_SDK_KEY=croo_sk_... from the dashboard.
+  croo-connect:
+    build:
+      context: ./croo-connect
+    env_file:
+      - ./croo-connect/.env
+    environment:
+      - HOOKAI_API_URL=http://api:8000
+      - CROO_API_URL=https://api.croo.network
+      - CROO_WS_URL=wss://api.croo.network/ws
+    depends_on:
+      - api
+    profiles:
+      - croo
+    restart: unless-stopped
+
+volumes:
+  hookai-data:

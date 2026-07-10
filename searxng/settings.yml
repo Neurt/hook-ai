@@ -1,0 +1,30 @@
+# SearXNG config for Hook AI — a self-hosted meta-search the app queries as a
+# keyless, quota-free job source. JSON format enabled; bot limiter disabled so
+# the backend can call it programmatically on the internal Docker network.
+use_default_settings: true
+
+general:
+  instance_name: "Hook AI Search"
+  donation_url: false
+  contact_url: false
+
+server:
+  secret_key: "hookai-searxng-local-change-me"
+  limiter: false        # allow programmatic JSON calls from the api service
+  image_proxy: false
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  formats:
+    - html
+    - json             # <-- required so /search?format=json works
+
+engines:
+  # Prefer engines that tolerate self-hosted instances; Google often blocks them.
+  - name: bing
+    disabled: false
+  - name: duckduckgo
+    disabled: false
+  - name: brave
+    disabled: false

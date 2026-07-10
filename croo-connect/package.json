@@ -1,0 +1,15 @@
+{
+  "name": "hookai-croo-connect",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "CROO Agent Protocol provider that bridges the Hook AI backend to CROO.",
+  "scripts": {
+    "start": "node provider.mjs",
+    "buy": "node requester.mjs"
+  },
+  "dependencies": {
+    "@croo-network/sdk": "^0.2.1",
+    "dotenv": "^16.4.5"
+  }
+}

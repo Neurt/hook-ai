@@ -1,0 +1,27 @@
+# Secrets — never commit real keys (.env.example files carry placeholders)
+**/.env
+
+# Personal data — real CVs are PII
+cv-playground/cvs/*
+!cv-playground/cvs/sample_cv.txt
+!cv-playground/cvs/messy_cv.txt
+cv-playground/out/
+
+# Build / runtime artifacts
+node_modules/
+web/dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
+data/
+
+# Internal docs — kept local only
+docs/
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

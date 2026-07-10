@@ -1,0 +1,24 @@
+{
+  "_comment": "Mirrors the service you configure on https://agent.crew.network. Fields follow CROO's service schema (name, description, price, sla_hours/minutes, deliverable_type, requirements_type) plus 1-5 skill tags from the dashboard taxonomy.",
+  "name": "Hook AI — Job Search Assistant",
+  "description": "Turns a CV into ATS-ready output, role recommendations, ranked live jobs, and outreach email drafts.",
+  "skill_tags": ["Automation & Workflow", "Research & Report", "Data & Analytics"],
+  "price": 1.0,
+  "sla_hours": 0,
+  "sla_minutes": 10,
+  "deliverable_type": "schema",
+  "requirements_type": "schema",
+  "default_task": "recommend",
+  "requirements_schema": {
+    "task": "recommend | certs | find_jobs | ats | tailor | draft_email | prepare_application",
+    "cv_text": "string — the candidate's CV text (max 200KB)",
+    "params": {
+      "what": "string (job keywords, for find_jobs)",
+      "where": "string (location incl. country, for find_jobs)",
+      "remote": "boolean",
+      "company": "string (for tailor / draft_email / prepare_application)",
+      "title": "string (for tailor / draft_email / prepare_application)",
+      "description": "string (job description — improves tailor/draft quality)"
+    }
+  }
+}

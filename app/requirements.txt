@@ -1,0 +1,3 @@
+# Hook AI — internal plane dependencies (kept minimal on purpose)
+openai>=1.30.0        # used as an OpenAI-compatible client pointed at OpenRouter
+python-dotenv>=1.0.0  # loads OPENROUTER_API_KEY from .env
